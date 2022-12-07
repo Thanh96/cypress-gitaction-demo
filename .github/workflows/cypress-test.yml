@@ -16,7 +16,6 @@ jobs:
 
       - name: Cypress run with env
         uses: cypress-io/github-action@v4
-        timeout-minute: 10
         with: 
          browser: chrome
       
