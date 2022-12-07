@@ -14,7 +14,7 @@ jobs:
       -name: Checkout repository code
        uses: actions/checkout@v2
 
-      -name: run cypress tests with chrome
+      -name: Run cypress tests with chrome
        uses: cypress-io/gitaction@v2 
        timeout-minute: 10
        with: 
