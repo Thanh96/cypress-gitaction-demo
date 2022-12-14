@@ -1,9 +1,18 @@
-name: cypress tests
+name: Cypress tests
 on:
   push:
     branches: 
       - 'master'
   workflow_dispatch:
+    inputs:
+      testBranch:
+        description: 'Which branch to checkout and run test'
+        required: false
+        default: master
+      testSpec:
+        description: 'Test spec'
+        required: false
+        default: all
 
 jobs:
   checkout-and-tests:
@@ -13,6 +22,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.inputs.testBranch }}
 
       - name: Cypress run with env
         uses: cypress-io/github-action@v4
