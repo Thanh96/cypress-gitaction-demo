@@ -22,8 +22,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.inputs.testBranch }}
+        # with:
+        #   ref: ${{ github.event.inputs.testBranch }}
 
       - name: Cypress run with env
         uses: cypress-io/github-action@v4
